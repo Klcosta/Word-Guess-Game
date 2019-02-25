@@ -1,5 +1,5 @@
 //World Capitals:
-var words = ["madrid", "london", "vientiane", "quito", "Naypyidaw", "tashkent", "jakarta", "accra", "tahiti", "","lilongwe", "paris", "santiago", "lima", "algeirs", "dublin" , "manila", "bogota", "istambul", "dakar", "bern", "lisbon", "rome", "ottowa", "brasilia", "bangkok", "beijing", "tokyo", "islamabad", "manila", "rabat", "kigali", "moscow", "welington", "juba", "kingston"]
+var words = ["madrid", "london", "paris", "vientiane", "quito", "tashkent", "jakarta", "accra", "tahiti","lilongwe", "santiago", "lima", "algeirs", "dublin" , "manila", "bogota", "istambul", "dakar", "bern", "lisbon", "rome", "ottowa", "brasilia", "bangkok", "beijing", "tokyo", "islamabad", "rabat", "kigali",]
 
 //Scoring Variables
 var wins = 0;
@@ -46,6 +46,7 @@ function checkletter(x) {
         document.getElementById("remainingguesses").innerHTML = remguesses;
         var randomnumber = Math.floor(Math.random() * words.length);
         var guessingword = words[randomnumber];
+        document.getElementById("cityimg").src = "assets/images/" + guessingword + ".jpg";
 
     //Substituting words with arrays of letters
         letters = guessingword.split("");
