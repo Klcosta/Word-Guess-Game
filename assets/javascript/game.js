@@ -1,5 +1,6 @@
 //World Capitals:
-var words = ["madrid", "london", "paris", "vientiane", "quito", "tashkent", "jakarta", "accra", "tahiti","lilongwe", "santiago", "lima", "algeirs", "dublin" , "manila", "bogota", "istambul", "dakar", "bern", "lisbon", "rome", "ottowa", "brasilia", "bangkok", "beijing", "tokyo", "islamabad", "rabat", "kigali", "amsterdam", "prague","berlin","moscow","doha","ulaanbaatar","abuja","managua","tehran","wellington","canberra","brussels","belgrade", "taipei", "cairo","beirut","nassau","seoul", "kathmandu", "male","tblisi","yerevan", "luanda", "kinshasa", "brazzaville", "montevideo", "antananarivo", "nuakchot","stockholm","vienna", "luxembourg","tegucigalpa","athens", "zagreb", "vaduz", "copenhagen", "washington"]
+var words = ["madrid", "london", "paris", "vientiane", "quito", "tashkent", "jakarta", "accra", "tahiti","lilongwe", "santiago", "lima", "algeirs", "dublin" , "manila", "bogota", "istambul", "dakar", "bern", "lisbon", "rome", "ottowa", "brasilia", "bangkok", "beijing", "tokyo", "islamabad", "rabat", "kigali", "amsterdam", "prague","berlin","moscow","doha","ulaanbaatar","abuja","managua","tehran","wellington","canberra","brussels","belgrade", "taipei", "cairo","beirut","nassau","seoul", "kathmandu", "male","tblisi","yerevan", "luanda", "kinshasa", "brazzaville", "montevideo", "antananarivo", "nuakchot","stockholm","vienna", "luxembourg","tegucigalpa","athens", "zagreb", "vaduz", "copenhagen", "washington", "buenos aires","reykjavik", "mexico city", "port au prince", "santo domingo", "havana", "san jose", "panama city", "hanoi", "phnom penh", "singapore","oslo","helsinki","sofia","skopje","addis ababa","guatemala city", "san salvador", "abu dhabi"]
+
 
 //Scoring Variables
 var wins = 0;
@@ -20,7 +21,7 @@ function checkletter(x) {
         if (letters[i] === x) {
             var correct = true
             answer.splice(i, 1, x);
-            document.getElementById("currentword").innerHTML = answer.join(' ');
+            document.getElementById("currentword").innerHTML = answer.join('');
         }
 
         console.log(correct);
@@ -48,7 +49,7 @@ function checkletter(x) {
         var randomnumber = Math.floor(Math.random() * words.length);
         var guessingword = words[randomnumber];
         document.getElementById("cityimg").src = "assets/images/" + guessingword + ".jpg";
-
+    
     //Substituting words with arrays of letters
         letters = guessingword.split("");
 
@@ -58,9 +59,15 @@ function checkletter(x) {
         answer[i] = "_"
         }
 
+        for (var i=0; i < answer.length; i++){ 
+            if (letters[i]===" ") {
+            answer.splice(i, 1, " "); 
+            }
+        }
+
     //Display "_,_,_,_,_"
 
-        document.getElementById("currentword").innerHTML = answer.join(' ');
+        document.getElementById("currentword").innerHTML = answer.join("");
 
     //answer = Array with "_,_,_,_,"
         console.log(answer)

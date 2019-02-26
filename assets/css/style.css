@@ -44,6 +44,10 @@ h1 {
     font-family: swing-king, sans-serif;
 }
 
+.space{
+    letter-spacing: 6px;
+}
+
 @media screen and (max-width: 430px) {
 
     .img{
