@@ -1,5 +1,5 @@
 //World Capitals:
-var words = ["madrid", "london", "paris", "vientiane", "quito", "tashkent", "jakarta", "accra", "tahiti","lilongwe", "santiago", "lima", "algeirs", "dublin" , "manila", "bogota", "istambul", "dakar", "bern", "lisbon", "rome", "ottowa", "brasilia", "bangkok", "beijing", "tokyo", "islamabad", "rabat", "kigali", "amsterdam", "prague","berlin","moscow","doha","ulaanbaatar","abuja","managua","tehran","wellington","canberra","brussels","belgrade", "taipei", "cairo","beirut","nassau","seoul", "kathmandu", "male", ]
+var words = ["madrid", "london", "paris", "vientiane", "quito", "tashkent", "jakarta", "accra", "tahiti","lilongwe", "santiago", "lima", "algeirs", "dublin" , "manila", "bogota", "istambul", "dakar", "bern", "lisbon", "rome", "ottowa", "brasilia", "bangkok", "beijing", "tokyo", "islamabad", "rabat", "kigali", "amsterdam", "prague","berlin","moscow","doha","ulaanbaatar","abuja","managua","tehran","wellington","canberra","brussels","belgrade", "taipei", "cairo","beirut","nassau","seoul", "kathmandu", "male","tblisi","yerevan", "luanda", "kinshasa", "brazzaville", "montevideo", "antananarivo", "nuakchot","stockholm","vienna", "luxembourg","tegucigalpa","athens", "zagreb", "vaduz", "copenhagen", "washington"]
 
 //Scoring Variables
 var wins = 0;
