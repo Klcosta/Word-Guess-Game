@@ -61,7 +61,6 @@ function checkletter(x) {
 function start() {
     d.classList.remove("greencolor")
     d.classList.remove("redcolor")
-    document.getElementById("wins").innerHTML = wins + "/" + counter;
     document.getElementById("remainingguesses").innerHTML = remguesses;
     document.getElementById("instructions").innerHTML = "PRESS ANY LETTER TO CONTINUE"
     var randomnumber = Math.floor(Math.random() * words.length);
@@ -125,11 +124,12 @@ function threeWayFork() {
         console.log("you loose")
         counter++;
         badguesses = [];
-        remguesses = 8;
+        remguesses = 10;
         document.getElementById("instructions").innerHTML = "PRESS THE SPACEBAR TO CONTINUE"
         document.getElementById("guessedletters").innerHTML = badguesses;
         document.getElementById("remainingguesses").innerHTML = remguesses;
         document.getElementById("currentword").innerHTML = letters.join('')
+        document.getElementById("wins").innerHTML = wins + "/" + counter;
         d.className += " redcolor";
         console.log(badguesses)
         console.log("remguesses")
@@ -137,12 +137,17 @@ function threeWayFork() {
         console.log(counter)
         document.onkeyup = function (event) {
             var spacebar = event.key.toLowerCase()
-            if (spacebar === " "){
-                start()
-                document.onkeyup = function (event) {
-                    var guess = event.key.toLowerCase();
-                    checkletter(guess);
-                    threeWayFork()
+            if (spacebar === " ") {
+                if (counter === 20){
+                    finishgame()
+                }
+                else{
+                    start()
+                    document.onkeyup = function (event) {
+                        var guess = event.key.toLowerCase();
+                        checkletter(guess);
+                        threeWayFork()
+                    }
                 }
             }
             else {
@@ -162,7 +167,7 @@ function threeWayFork() {
         wins++;
         counter++;
         badguesses = [];
-        remguesses = 8;
+        remguesses = 10;
         document.getElementById("instructions").innerHTML = "PRESS THE SPACEBAR TO CONTINUE"
         document.getElementById("guessedletters").innerHTML = badguesses;
         document.getElementById("remainingguesses").innerHTML = remguesses;
@@ -172,12 +177,17 @@ function threeWayFork() {
         d.className += " greencolor";
         document.onkeyup = function (event) {
             var spacebar = event.key.toLowerCase()
-            if (spacebar === " "){
-                start()
-                document.onkeyup = function (event) {
-                    var guess = event.key.toLowerCase();
-                    checkletter(guess);
-                    threeWayFork()
+            if (spacebar === " ") {
+                if (counter === 20) {
+                    finishgame()
+                }
+                else {
+                    start()
+                    document.onkeyup = function (event) {
+                        var guess = event.key.toLowerCase();
+                        checkletter(guess);
+                        threeWayFork()
+                    }
                 }
             }
             else {
@@ -190,31 +200,33 @@ function threeWayFork() {
 
     //When you've played 20 words
 
-    if (counter === 20) {
+    function finishgame() {
+
         console.log("Game Over")
         document.getElementById("instructions").innerHTML = "PRESS THE SPACEBAR TO RESTART"
-        if (wins > 19) {
-            document.getElementById("cityimg").src = "assets/images/scoreA.jpg";
+        if (wins >= 19) {
+            document.getElementById("cityimg").src = "assets/images/scoreAv2.jpg";
         }
         if (wins === 17 || wins === 18) {
-            document.getElementById("cityimg").src = "assets/images/scoreB.jpg";
+            document.getElementById("cityimg").src = "assets/images/scoreBv2.jpg";
         }
         if (wins === 15 || wins === 16) {
-            document.getElementById("cityimg").src = "assets/images/scoreC.jpg";
+            document.getElementById("cityimg").src = "assets/images/scoreCv2.jpg";
         }
         if (wins === 13 || wins === 14) {
-            document.getElementById("cityimg").src = "assets/images/scoreD.jpg";
+            document.getElementById("cityimg").src = "assets/images/scoreDv2.jpg";
         }
-        if (wins < 12) {
-            document.getElementById("cityimg").src = "assets/images/scoreF.jpg";
+        if (wins <= 12) {
+            document.getElementById("cityimg").src = "assets/images/scoreFv2.jpg";
         }
 
         alreadyguessed = []
         counter = 0
         wins = 0
         remguesses = 10
+        document.getElementById("currentword").innerHTML = ""
+        document.getElementById("wins").innerHTML = ""
+
     }
-
 }
-
 
