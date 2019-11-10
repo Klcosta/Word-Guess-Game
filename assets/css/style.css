@@ -48,6 +48,14 @@ h1 {
     letter-spacing: 6px;
 }
 
+.greencolor{
+    color: #84ce89;
+}
+
+.redcolor{
+    color: #ce8484;
+}
+
 @media screen and (max-width: 430px) {
 
     .img{
