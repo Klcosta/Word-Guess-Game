@@ -21,7 +21,6 @@ var correct = false
 //Color Variables
 var d = document.getElementById("currentword");
 
-
 // FUNCTION-Checks letter
 function checkletter(x) {
     if (alphabet.indexOf(x) === -1) {
